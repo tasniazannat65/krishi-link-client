@@ -22,7 +22,7 @@ const Footer = () => {
     </Link>
     
     </div>
-    <p className='text-lg hind-siliguri-font text-white font-semibold  mt-3'>FasalBridge unites farmers, buyers, and agri-experts to drive rural growth through fair trade, knowledge, and sustainable innovation.</p>
+    <p className='text-lg hind-siliguri-font text-gray-300 font-semibold  mt-3'>FasalBridge unites farmers, buyers, and agri-experts to drive rural growth through fair trade, knowledge, and sustainable innovation.</p>
    </div>
     <nav className='lg:ml-16 ml-0 md:ml-12 '>
     <h6 className="text-xl font-semibold text-[#FFB300]">Services</h6>
@@ -58,10 +58,10 @@ const Footer = () => {
   <nav className='space-y-2'>
     <h6 className=" text-[#FFB300] text-xl font-semibold ">Social</h6>
     <div className='flex gap-3 text-white'>
-        <a><FaFacebook size={24}/></a>
-    <a><IoLogoYoutube size={24}/></a>
-    <a><FaXTwitter size={24}/></a>
-    <a><BsInstagram size={24}/></a>
+        <a className='rounded-full bg-amber-400 p-2'><FaFacebook className='hover:scale-110 transition  duration-200 ease-in-out' size={20}/></a>
+    <a className='rounded-full bg-amber-400 p-2'><IoLogoYoutube className='hover:scale-110 transition  duration-200 ease-in-out' size={20}/></a>
+    <a className='rounded-full bg-amber-400 p-2'><FaXTwitter className='hover:scale-110 transition  duration-200 ease-in-out' size={20}/></a>
+    <a className='rounded-full bg-amber-400 p-2'><BsInstagram className='hover:scale-110 transition  duration-200 ease-in-out' size={20}/></a>
     </div>
      <fieldset className="w-70">
       <label className='text-white'>Enter your email address</label>

@@ -16,7 +16,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/all-crops',
-                Component: AllCrops
+                Component: AllCrops,
+                loader: ()=> fetch('http://localhost:5000/crops')
             }
         ]
     }
