@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import bgImg from '../assets/error-bg.jpg'
+import { FaHome } from 'react-icons/fa';
 
 const PageError = () => {
     return (
@@ -18,7 +19,9 @@ const PageError = () => {
                 <h2 className='text-2xl md:text-4xl lg:text-5xl font-semibold mt-4 text-[#FFB300]'>Page Not Found</h2>
                 <p className='mt-2 mb-6 text-lg md:text-xl lg:text-2xl text-green-100'>Oopps! Looks like this page doesn't exist.</p>
                 <Link to='/' className='btn bg-gradient-to-r from-[#4CAF50] via-[#F9A825] to-[#1B5E20] text-white font-semibold px-6 py-3 rounded-md transition-all duration-300 hover-bg-gradient-to-r
-                hover:from-green-800 hover:to-green-700 animate-pulse text-xl'>Go Home</Link>
+                hover:from-green-800 hover:to-green-700 animate-pulse text-xl'>
+                    <FaHome  color='#6D4C41'/>
+                    Go Home</Link>
             </div>
         </div>
 

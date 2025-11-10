@@ -11,6 +11,7 @@ const Home = () => {
         <div>
             <section>
                 <HeroBanner/>
+                
             </section>
            <Container>
              <section>

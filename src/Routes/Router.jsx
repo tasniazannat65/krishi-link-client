@@ -3,6 +3,7 @@ import MainLayout from "../Layouts/MainLayout";
 import Home from "../Pages/Home";
 import PageError from "../ErrorPage/PageError";
 import AllCrops from "../Pages/AllCrops";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 export const router = createBrowserRouter([
     {
@@ -13,12 +14,14 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
-                loader: ()=> fetch('http://localhost:5000/latest-crops')
+                loader: ()=> fetch('http://localhost:5000/latest-crops'),
+                hydrateFallbackElement: <LoadingSpinner/>
             },
             {
                 path: '/all-crops',
                 Component: AllCrops,
-                loader: ()=> fetch('http://localhost:5000/crops')
+                loader: ()=> fetch('http://localhost:5000/crops'),
+                hydrateFallbackElement: <LoadingSpinner/>
             }
         ]
     }
