@@ -12,7 +12,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: Home
+                Component: Home,
+                loader: ()=> fetch('http://localhost:5000/latest-crops')
             },
             {
                 path: '/all-crops',

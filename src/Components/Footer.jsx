@@ -83,7 +83,7 @@ const Footer = () => {
             
         </div>
          <div className='bg-[#FFB300] p-4 lg:p-5  poppins-font'>
-                <p className='text-lg lg:text-xl text-green-700 font-bold text-center'>Copyright © 2025 - All right reserved by FasalBridge.</p>
+                <p className='text-lg lg:text-xl text-green-700 font-semibold text-center'>Copyright © 2025 - All right reserved by FasalBridge.</p>
             </div>
        </div>
         

@@ -8,9 +8,11 @@ const CropsCard = ({crop}) => {
     return (
     <div className=' relative border border-green-100  rounded-lg poppins-font shadow-md hover:shadow-2xl hover:-translate-y-2  transition-all transform duration-300 bg-gradient-to-b from-green-50 to-white '>
         
-           <span className='absolute -top-4 -left-3 bg-green-600 text-white text-md font-medium py-4 px-6 rounded-md shadow-sm z-20 '>
+         <div className='absolute -top-4 -left-3 bg-orange-400 shadow-md  z-20 -skew-x-6'>
+              <span className=' inline-block transform skew-x-6  text-white text-md font-medium py-2 px-4  '>
                 {crop.category}
             </span>
+         </div>
         
         <div className='overflow-hidden rounded-t-lg z-10 '>
             <img className='h-[290px] w-full  object-cover transition-transform duration-300 hover:scale-110' src={crop.image} alt={crop.name} />
