@@ -6,11 +6,11 @@ import Footer from '../Components/Footer';
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className='bg-[#FAFAF8]'>
            <header>
             <Navbar/>
            </header>
-            <main className='min-h-screen bg-[#FAFAF8]'>
+            <main className='min-h-screen '>
                 <Outlet/>
             </main>
             <footer>

@@ -4,6 +4,8 @@ import Home from "../Pages/Home";
 import PageError from "../ErrorPage/PageError";
 import AllCrops from "../Pages/AllCrops";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import Register from "../Pages/Register";
+import Login from "../Pages/Login";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ export const router = createBrowserRouter([
                 Component: AllCrops,
                 loader: ()=> fetch('http://localhost:5000/crops'),
                 hydrateFallbackElement: <LoadingSpinner/>
+            },
+            {
+                path: '/register',
+                Component: Register
+            },
+            {
+                path: '/login',
+                Component: Login
             }
         ]
     }

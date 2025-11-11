@@ -53,10 +53,10 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end space-x-3">
-    <Link className='btn text-lg font-semibold rounded-md border-2  border-[#2E7D32] bg-gradient-to-r from-[#1B5E20] to-[#4CAF50] bg-clip-text text-transparent '>
+    <Link to='/login' className='btn text-lg font-semibold rounded-md border-2  border-[#2E7D32] bg-gradient-to-r from-[#1B5E20] to-[#4CAF50] bg-clip-text text-transparent '>
     <FiLogIn color='#1B5E20'/>
     Login</Link>
-    <Link className='btn bg-gradient-to-r from-[#1B5E20] to-[#4CAF50]  text-lg font-semibold rounded-md text-white'>
+    <Link to='/register' className='btn bg-gradient-to-r from-[#1B5E20] to-[#4CAF50]  text-lg font-semibold rounded-md text-white'>
     <FaUserPlus/>
     Sign Up</Link>
   </div>
