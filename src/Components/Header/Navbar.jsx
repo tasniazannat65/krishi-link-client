@@ -10,7 +10,7 @@ import MyLink from './MyLink';
 
 const Navbar = () => {
     return (
-<div className='bg-[#2e7d321f]'>
+<div className='bg-[#cfe2a3c4]'>
     <Container>
            <div className="navbar  poppins-font">
   <div className="navbar-start">

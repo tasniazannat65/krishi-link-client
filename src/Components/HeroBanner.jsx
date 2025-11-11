@@ -12,7 +12,7 @@ const containerVariant = {
 };
 const itemVariants = {
   hidden: {opacity: 0, y: -50},
-  visible: {opacity: 1, y: 0, transition: {duration: 0.9}}
+  visible: {opacity: 1, y: 0, transition: {duration: 0.8}}
 };
 
 
@@ -80,7 +80,7 @@ const HeroBanner = () => {
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         exit={{opacity: 0}}
-        transition={{duration: 0.9}}
+        transition={{duration: 0.8}}
         className='w-full h-full absolute'
         drag='x'
         dragConstraints={{left: 0, right: 0}}

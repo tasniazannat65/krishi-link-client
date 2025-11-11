@@ -46,8 +46,8 @@ const AllCrops = () => {
         <div>
          <Container>
        <div className='flex items-center justify-center flex-col text-center py-10'>
-             <h2 className='font-bold text-2xl md:text-3xl lg:text-4xl   text-[#1B5E20] poppins-font'>🌿 Explore All <span className='text-[#F9A825]'>Available Crops</span></h2>
-            <p className=' font-semibold text-lg  md:text-xl lg:text-xl text-gray-400 hind-siliguri-font mt-5 mb-7'>Find fresh, high-quality crops directly from trusted farmers across the country. Browse, compare prices, and connect instantly through FasalBridge.</p>
+             <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'>🌿 Explore All <span className='text-[#F9A825]'>Available Crops</span></h2>
+            <p className=' font-medium text-lg  md:text-xl lg:text-xl text-gray-600 hind-siliguri-font max-w-3xl mx-auto mt-5 mb-7'>Find fresh, high-quality crops directly from trusted farmers across the country. Browse, compare prices, and connect instantly through FasalBridge.</p>
 
              
        <form onSubmit={handleCropsSearch}>

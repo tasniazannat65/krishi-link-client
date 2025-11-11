@@ -2,8 +2,11 @@ import React from 'react';
 import { AuthContext } from './AuthContext';
 
 const AuthProvider = ({children}) => {
+    const authInfo = {
+        email: 'example@gmail.com'
+    }
     return (
-        <AuthContext>
+        <AuthContext value={authInfo}>
             {children}
         </AuthContext>
     );
