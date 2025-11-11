@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImg from '../assets/registerbg.jpg'
+import bgImg from '../assets/footerbg.jpg'
 import { Link } from 'react-router';
 import img from '../assets/farmer.webp'
 
@@ -7,7 +7,7 @@ const Register = () => {
     return (
        
          <div className='relative bg-cover bg-center py-16  flex justify-center items-center poppins-font px-4' style={{backgroundImage: `url(${bgImg})`}}>
-            <div className='absolute inset-0 bg-gradient-to-br from-black/70 to-green-900/40 '></div>
+            <div className='absolute inset-0 bg-gradient-to-br from-black/70 to-green-900/50 '></div>
             <div className='relative z-10 bg-white/95 p-6  flex flex-col md:flex-row lg:flex-row gap-4 rounded-xl shadow-2xl hover:shadow-lg transition-shadow duration-300 max-w-5xl w-full items-center'>
                 <div className='flex flex-col items-center justify-center text-center md:w-1/2 lg:w-1/2'>
                     <img className='rounded-lg w-full h-[380px] object-cover shadow-md' src='https://www.shutterstock.com/image-photo/farmer-planting-on-organic-paddy-600nw-497587918.jpg' alt="farmers" />

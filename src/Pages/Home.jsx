@@ -5,6 +5,7 @@ import CropsCard from '../Components/CropsCard';
 import Container from '../Container/Container';
 import { FaArrowCircleRight } from 'react-icons/fa';
 import HowItWorks from '../Components/HowItWorks';
+import Blogs from '../Components/Blogs';
 
 const Home = () => {
     const crops = useLoaderData();
@@ -45,6 +46,9 @@ const Home = () => {
             </section>
             <section>
                 <HowItWorks/>
+            </section>
+            <section>
+                <Blogs/>
             </section>
            </Container>
         </div>
