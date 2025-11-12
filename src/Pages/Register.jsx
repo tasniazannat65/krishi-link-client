@@ -46,6 +46,9 @@ const Register = () => {
            toast.error('This email is already registered, Please Login');
            return;
             }
+            else{
+                 toast.error(error.message, { id: "create-user" });
+            }
            
         })
         
@@ -61,7 +64,7 @@ const Register = () => {
 
          })
          .catch(error=>{
-            toast.error(error.message);
+             toast.error(error.message, { id: "create-user" });
          })
         
     }
