@@ -20,6 +20,13 @@ const Register = () => {
         const email = e.target.email?.value;
         const password = e.target.password?.value;
 
+        const newUser = {
+            displayName,
+            photoURL,
+            email
+        
+        }
+
           // password validation
         const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if(!regex.test(password)){
@@ -36,9 +43,22 @@ const Register = () => {
             updateUserProfile(displayName, photoURL)
             
             setUser(result.user)
+            fetch('http://localhost:5000/register-user', {
+               method: 'POST',
+               headers: {
+                'content-type': 'application/json'
+               },
+               body: JSON.stringify(newUser)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                setUser(data)
+            })
             e.target.reset();
             toast.success('User Created Successfully!!', {id: 'create-user'});
             navigate('/');
+
 
         })
         .catch(error=>{
@@ -47,24 +67,23 @@ const Register = () => {
            return;
             }
             else{
-                 toast.error(error.message, { id: "create-user" });
+                 toast.error(error.message)
             }
            
         })
         
     }
     const handleGoogleSignIn = ()=>{
-         toast.loading('Creating user...', {id: "create-user"});
          signInWithGoogle()
          .then(result=>{
          
             setUser(result.user);
-             toast.success('User Created Successfully!!', {id: 'create-user'});
+             toast.success('User Created Successfully!!');
              navigate('/');
 
          })
          .catch(error=>{
-             toast.error(error.message, { id: "create-user" });
+             toast.error(error.message);
          })
         
     }

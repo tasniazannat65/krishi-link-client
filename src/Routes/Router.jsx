@@ -6,6 +6,9 @@ import AllCrops from "../Pages/AllCrops";
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import Register from "../Pages/Register";
 import Login from "../Pages/Login";
+import ForgetPassword from "../Pages/ForgetPassword";
+import AddCrops from "../Pages/AddCrops";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -26,12 +29,25 @@ export const router = createBrowserRouter([
                 hydrateFallbackElement: <LoadingSpinner/>
             },
             {
+                path: '/add-crops',
+                element: <PrivateRoute>
+                    <AddCrops/>
+                </PrivateRoute>
+                    
+                
+
+            },
+            {
                 path: '/register',
                 Component: Register
             },
             {
                 path: '/login',
                 Component: Login
+            },
+            {
+                path: '/forget-password',
+                Component: ForgetPassword
             }
         ]
     }

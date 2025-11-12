@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
-    const { signInUser, signInWithGoogle, setUser} = use(AuthContext);
+    const { signInUser, signInWithGoogle, setUser, emailRef} = use(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
         const [show, setShow] = useState(false);
@@ -32,27 +32,32 @@ const Login = () => {
           toast.error('Invalid credential. Please try again.');
             }
             else{
-                 toast.error(error.message, { id: "create-user" });
+                 toast.error(error.message);
             }
            
 
         })
     }
     const handleGoogleLogin = ()=>{
-         toast.loading('Creating user...', {id: "create-user"});
         signInWithGoogle()
         .then(result=>{
             setUser(result);
-            toast.success('User Logged in with Google Successfully!!', {id: 'create-user'});
+            toast.success('User Logged in with Google Successfully!!');
             navigate(location.state || '/');
 
         })
         .catch(error=>{
-             toast.error(error.message, { id: "create-user" });
+             toast.error(error.message)
             
 
         })
     }
+    const handleForgetPassword = (e)=>{
+        e.preventDefault();
+        const email = emailRef.current?.value || '';
+        navigate('/forget-password', {state: {email}})
+    }
+
     return (
          <div className='relative bg-cover bg-center min-h-screen py-10 md:py-0 lg:py-0 flex justify-center items-center poppins-font px-4' style={{backgroundImage: `url(${bgImg})`}}>
             <div className='absolute inset-0 bg-gradient-to-br from-black/70 to-green-900/40 '></div>
@@ -72,7 +77,7 @@ const Login = () => {
        <form onSubmit={handleLogin} className='mt-8'>
          <fieldset className="fieldset">
           <label className="label font-semibold text-gray-500 text-[16px]">Email</label>
-          <input type="email" name='email' className="input w-full  rounded-md border-gray-300 focus:border-green-600 focus:ring-green-500" placeholder="example@gmail.com" required />
+          <input type="email" name='email' ref={emailRef} className="input w-full  rounded-md border-gray-300 focus:border-green-600 focus:ring-green-500" placeholder="example@gmail.com" required />
  <div className='relative'>
              <label className="label font-semibold text-gray-500 text-[16px]">Password</label>
           <input type={show ? 'text' : 'password'} name='password' className="input w-full  rounded-md border-gray-300 focus:border-green-600 focus:ring-green-500" placeholder="*******" required/>
@@ -80,7 +85,7 @@ const Login = () => {
             {show ? (<FaEye size={20}/>) : (<FaEyeSlash size={20}/>)}
           </span>
  </div>
-          <div className='mt-2'><a className="link link-hover font-semibold text-gray-500 text-[16px]">Forgot password?</a></div>
+          <div onClick={handleForgetPassword} className='mt-2'><a className="link link-hover font-semibold text-gray-500 text-[16px]">Forgot password?</a></div>
           
           <button className="btn bg-[#6D4C41] text-white font-semibold text-lg w-full hover:bg-[#8D6E63] transition-colors duration-200  mt-3">Login</button>
           <div className='flex items-center gap-2'>

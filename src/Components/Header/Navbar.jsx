@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { Link, NavLink } from 'react-router';
 import logo from '../../assets/logo.png'
 import Container from '../../Container/Container';
@@ -6,9 +6,13 @@ import { FiLogIn } from "react-icons/fi";
 import { FaHome, FaUserPlus } from "react-icons/fa";
 import { FaSeedling } from "react-icons/fa6";
 import MyLink from './MyLink';
+import { AuthContext } from '../../Context/AuthContext';
+import { IoLogOut } from 'react-icons/io5';
 
 
 const Navbar = () => {
+  const {user, signOutUser} = use(AuthContext);
+
     return (
 <div className='bg-[#cfe2a3c4]'>
     <Container>
@@ -26,6 +30,9 @@ const Navbar = () => {
        </li>
        <li className='hover:bg-yellow-500 text-green-600 hover:text-white text-xl'>
         <NavLink to='/all-crops'>All Crops</NavLink>
+       </li>
+       <li className='hover:bg-yellow-500 text-green-600 hover:text-white text-xl'>
+        <NavLink to='/add-crops'>Add Crops</NavLink>
        </li>
       </ul>
     </div>
@@ -49,17 +56,81 @@ const Navbar = () => {
         <FaSeedling color='#4CAF50'/>
         <MyLink to='/all-crops'>All Crops</MyLink>
        </li>
+       <li className='flex items-center gap-1'>
+        <FaSeedling color='#4CAF50'/>
+        <MyLink to='/add-crops'>Add Crops</MyLink>
+       </li>
    
     </ul>
   </div>
-  <div className="navbar-end space-x-3">
+
+  {
+    user ? (
+        <div className="dropdown dropdown-end z-50">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle avatar"
+            >
+              <div className="w-9 border-2 border-gray-300 rounded-full">
+                <img
+                  alt="Tailwind CSS Navbar component"
+                  referrerPolicy="no-referrer"
+                  src={user.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"}
+                />
+              </div>
+            </div>
+            <ul
+              tabIndex="-1"
+              className="menu  menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
+            >
+              <div className=" pb-3 border-b border-b-gray-200">
+                <li className="text-sm font-bold">{user.displayName}</li>
+                <li className="text-xs">{user.email}</li>
+              </div>
+              {/* <li className="mt-3">
+                <Link to={"/profile"}>
+                  <FaUser /> Profile
+                </Link>
+              </li> */}
+
+              {/* <li>
+                <Link to={"/my-models"}>
+                  My Models
+                </Link>
+              </li> */}
+
+              {/* <li >
+                <Link to={"/my-downloads"}>
+                 My Downloads
+                </Link>
+           
+                <a>
+                  {" "}
+                  <FaGear /> Settings
+                </a>
+              </li> */}
+              <li>
+                <button
+                  onClick={signOutUser}
+                  className="btn btn-xs text-left bg-linear-to-r from-pink-500 to-red-500 text-white"
+                >
+                  <IoLogOut /> Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        
+    ) : <div className="navbar-end space-x-3">
     <Link to='/login' className='btn text-lg font-semibold rounded-md border-2  border-[#2E7D32] bg-gradient-to-r from-[#1B5E20] to-[#4CAF50] bg-clip-text text-transparent '>
     <FiLogIn color='#1B5E20'/>
     Login</Link>
-    <Link to='/register' className='btn bg-gradient-to-r from-[#1B5E20] to-[#4CAF50]  text-lg font-semibold rounded-md text-white'>
+    {/* <Link to='/register' className='btn bg-gradient-to-r from-[#1B5E20] to-[#4CAF50]  text-lg font-semibold rounded-md text-white'>
     <FaUserPlus/>
-    Sign Up</Link>
+    Sign Up</Link> */}
   </div>
+  }
+  
 </div>
 </Container>
 </div>
