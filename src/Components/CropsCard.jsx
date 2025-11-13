@@ -1,5 +1,6 @@
 import React from 'react';
 import takaImg from '../assets/taka.png'
+import { Link } from 'react-router';
 
 
 const CropsCard = ({crop}) => {
@@ -23,8 +24,8 @@ const CropsCard = ({crop}) => {
             <p className='text-lg font-medium text-green-700 flex gap-1 items-center'><span>Price:</span> 
                 <img className='w-4 h-4 ' src={takaImg} alt="taka" />
                 <span className=' text-gray-500 text-md'>{crop.pricePerUnit} {crop.unit}</span></p>
-                <p className='leading-snug line-clamp-2 text-md text-gray-600 '>{crop.description}</p>
-                <button className='btn border-2 py-2 mt-2 rounded-md border-green-600 w-full text-green-700 hover:bg-green-600 transition-all duration-200 hover:text-white text-lg font-semibold bg-white '>View Details</button>
+                <p className='leading-snug line-clamp-2 text-md text-gray-600 '>{crop.description.slice(0, 100)}...</p>
+                <Link to={`/crop-details/${crop._id}`} className='btn border-2 py-2 mt-2 rounded-md border-green-600 w-full text-green-700 hover:bg-green-600 transition-all duration-200 hover:text-white text-lg font-semibold bg-white '>View Details</Link>
         </div>
 
 

@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import bgImg from '../assets/registerbg.jpg'
 import { Link, useLocation, useNavigate } from 'react-router';
 import img from '../assets/farmer.webp'
@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
-    const { signInUser, signInWithGoogle, setUser, emailRef} = use(AuthContext);
+    const { signInUser, signInWithGoogle, setUser, emailRef} = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
         const [show, setShow] = useState(false);

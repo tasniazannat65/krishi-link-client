@@ -9,6 +9,8 @@ import Login from "../Pages/Login";
 import ForgetPassword from "../Pages/ForgetPassword";
 import AddCrops from "../Pages/AddCrops";
 import PrivateRoute from "./PrivateRoute";
+import CropDetails from "../Pages/CropDetails";
+import MyPosts from "../Pages/MyPosts";
 
 export const router = createBrowserRouter([
     {
@@ -37,6 +39,19 @@ export const router = createBrowserRouter([
                 
 
             },
+            {
+                path: '/crop-details/:id',
+                element: <PrivateRoute>
+                    <CropDetails/>
+                </PrivateRoute>
+            },
+            {
+             path: '/my-posts',
+             element: <PrivateRoute>
+                <MyPosts/>
+             </PrivateRoute>
+            },
+
             {
                 path: '/register',
                 Component: Register

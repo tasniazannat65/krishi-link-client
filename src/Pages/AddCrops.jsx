@@ -1,10 +1,12 @@
-import React, { use } from 'react';
+import React, {  useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import Container from '../Container/Container';
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router';
 
 const AddCrops = () => {
-    const {user} = use(AuthContext);
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleCropSubmit = (e)=>{
         e.preventDefault();
         const cropData = {
@@ -38,6 +40,7 @@ const AddCrops = () => {
         .then(data=>{
             toast.success('Crops added successfully!')
             console.log(data)
+            navigate('/my-posts')
         })
         .catch(error=>{
             console.log(error)
@@ -121,7 +124,7 @@ const AddCrops = () => {
             <textarea
               name="description"
               required
-              rows="3"
+              rows="5"
              className="textarea w-full rounded-lg focus:ring-2  focus:ring-green-400"
               placeholder="Write short crop details..."
             ></textarea>

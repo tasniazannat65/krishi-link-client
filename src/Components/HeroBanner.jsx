@@ -111,9 +111,9 @@ const HeroBanner = () => {
             </motion.h1>
             <motion.p
             variants={itemVariants}
-            className='mt-2 lg:mt-4 text-[16px] md:text-xl lg:text-2xl text-gray-300 font-semibold hind-siliguri-font tracking-wide'
+            className='mt-2 lg:mt-4 text-[12px] md:text-lg lg:text-xl text-gray-300 font-semibold hind-siliguri-font tracking-wide'
             >
-              {slides[current].details}
+              {slides[current].description}
             </motion.p>
              <motion.button
            initial={{opacity: 0, y: 20}}
@@ -153,7 +153,7 @@ const HeroBanner = () => {
       }
 
       </div>
-      <div className='absolute bottom-10 md:bottom-12 lg:bottom-16 left-[99px] md:left-2/5 lg:left-5/12 transform -translate-x-1/2 flex space-x-2'>
+      <div className='absolute bottom-3 md:bottom-12 lg:bottom-16 left-[99px] md:left-1/2 lg:left-1/2 transform -translate-x-1/2 flex space-x-2'>
       {
         slides.map((slide, index)=>(
           <img key={slide._id} src={slide.image} alt={slide.name} className={`w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 object-cover rounded-lg cursor-pointer border-2

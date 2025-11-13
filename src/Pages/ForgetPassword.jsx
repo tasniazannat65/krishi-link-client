@@ -1,4 +1,4 @@
-import React, { use, useEffect } from 'react';
+import React, {  useContext, useEffect } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { useLocation } from 'react-router';
 import toast from 'react-hot-toast';
@@ -6,7 +6,7 @@ import forgetImg from '../assets/forget.png'
 
 
 const ForgetPassword = () => {
-    const { forgetPasswordReset, emailRef} = use(AuthContext);
+    const { forgetPasswordReset, emailRef} = useContext(AuthContext);
     const location = useLocation();
     const receivedEmail = location.state?.email || '';
     useEffect(()=>{

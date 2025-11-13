@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import bgImg from '../assets/footerbg.jpg'
 import { Link, useNavigate } from 'react-router';
 import img from '../assets/farmer.webp'
@@ -7,7 +7,7 @@ import toast from 'react-hot-toast';
 import { FaEyeSlash,  FaEye } from "react-icons/fa";
 
 const Register = () => {
-    const {createUsers,  setUser, signInWithGoogle, updateUserProfile} = use(AuthContext);
+    const {createUsers,  setUser, signInWithGoogle, updateUserProfile} = useContext(AuthContext);
     const navigate = useNavigate();
     const [show, setShow] = useState(false);
     const [error, setError] = useState('');
@@ -74,10 +74,29 @@ const Register = () => {
         
     }
     const handleGoogleSignIn = ()=>{
+      
          signInWithGoogle()
          .then(result=>{
          
             setUser(result.user);
+              const newUser = {
+            displayName:result.user.displayName,
+            photoURL:result.user.photoURL,
+            email: result.user.email
+        
+        }
+             fetch('http://localhost:5000/register-user', {
+               method: 'POST',
+               headers: {
+                'content-type': 'application/json'
+               },
+               body: JSON.stringify(newUser)
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data)
+                setUser(data)
+            })
              toast.success('User Created Successfully!!');
              navigate('/');
 
