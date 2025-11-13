@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router';
 import logo from '../../assets/logo.png'
 import Container from '../../Container/Container';
 import { FiLogIn } from "react-icons/fi";
-import { FaHome, FaShoppingCart, FaUserPlus } from "react-icons/fa";
+import { FaClipboardList, FaHome, FaShoppingCart, FaUser, FaUserPlus } from "react-icons/fa";
 import { FaSeedling } from "react-icons/fa6";
 import MyLink from './MyLink';
 import { AuthContext } from '../../Context/AuthContext';
@@ -60,8 +60,9 @@ const Navbar = () => {
        </li>
        {
         user && (
-          <div className='flex items-center gap-2'>
-             <li className='flex items-center gap-1'>
+          <div className='  lg:block hidden md:hidden '>
+           <ul className='flex items-center gap-3'>
+              <li className='flex items-center gap-1'>
             <FaShoppingCart color='#212121' />
                 <MyLink to="/add-crops">
                 
@@ -69,12 +70,20 @@ const Navbar = () => {
                 </MyLink>
               </li>
              <li className='flex items-center gap-1'>
-            <FaShoppingCart color='#212121' />
+            <FaClipboardList className='text-gray-500' />
                 <MyLink to="/my-posts">
                 
                    My Posts
                 </MyLink>
               </li>
+             <li className='flex items-center gap-1'>
+            <FaUser className='text-blue-500' />
+                <MyLink to="/profile">
+                
+                   My Profile
+                </MyLink>
+              </li>
+           </ul>
 
           </div>
               
@@ -113,6 +122,31 @@ const Navbar = () => {
                 <li className="text-sm font-bold text-green-600 text-center">{user.displayName}</li>
                 <li className="text-xs text-gray-600 text-center">{user.email}</li>
               </div>
+             <div className=' lg:hidden'>
+           <ul >
+              <li className=' text-gray-700 font-semibold text-xl'>
+                <NavLink to="/add-crops">
+                
+                   Add Crops
+                </NavLink>
+              </li>
+             <li className=' text-gray-700 font-semibold text-xl '>
+            
+                <NavLink to="/my-posts">
+                
+                   My Posts
+                </NavLink>
+              </li>
+             <li className=' text-gray-700 font-semibold text-xl'>
+         
+                <NavLink to="/profile">
+                
+                   My Profile
+                </NavLink>
+              </li>
+
+           </ul>
+          </div>
              
 
              

@@ -52,13 +52,13 @@ const AllCrops = () => {
              
        <form onSubmit={handleCropsSearch}>
         <div
-  class="relative w-[350px] md:w-[400px] lg:w-[480px] bg-gray-100 rounded-2xl shadow-md p-1.5 hover:shadow-lg"
+  className="relative w-[350px] md:w-[400px] lg:w-[480px] bg-gray-100 rounded-2xl shadow-md p-1.5 hover:shadow-lg"
 >
   <div
-    class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"
+    className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none"
   >
     <svg
-      class="h-5 w-5 text-gray-400"
+      className="h-5 w-5 text-gray-400"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
       fill="currentColor"
@@ -73,11 +73,11 @@ const AllCrops = () => {
   <input
     type="search"
     name='search'
-    class="w-full pl-8 pr-24 py-3 text-base text-gray-700 bg-transparent rounded-lg focus:outline-none"
+    className="w-full pl-8 pr-24 py-3 text-base text-gray-700 bg-transparent rounded-lg focus:outline-none"
     placeholder="Search Crops..."
   />
   <button
-    class="absolute right-1 top-1 bottom-1 px-6 bg-[#2E7D32] text-white font-medium rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2E7D32]"
+    className="absolute right-1 top-1 bottom-1 px-6 bg-[#2E7D32] text-white font-medium rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2E7D32]"
   >
     Search
   </button>

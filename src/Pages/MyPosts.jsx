@@ -143,7 +143,7 @@ const MyPosts = () => {
                                     <td className='py-2 px-4 border-2 border-green-600 text-gray-700 font-medium'>{crop.pricePerUnit} / {crop.unit}</td>
                                     <td className='py-2 px-4 border-2 border-green-600 text-gray-700 font-medium'>{crop.quantity}</td>
                                     <td className='py-2 px-4 border-2 border-green-600 text-gray-700 font-medium'>{crop.location}</td>
-                                    <td className='py-2 px-4 border space-x-2'>
+                                    <td className='py-2 px-4 border md:space-y-2 space-x-2 '>
                                         <button  onClick={()=>{
                                             setUpdateCrop(crop)
                                             handleCropModalOpen()
@@ -205,7 +205,7 @@ const MyPosts = () => {
         <input type="number" name='quantity' defaultValue={updateCrop?.quantity || ''}
         className='w-full border rounded-md p-2'
         placeholder='Quantity' required />
-        
+
            <label className='text-gray-900 font-semibold'>Location</label>
 
         <input type="text" name='location' defaultValue={updateCrop?.location || ''}
