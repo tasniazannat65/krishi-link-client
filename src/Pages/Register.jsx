@@ -1,5 +1,5 @@
 import React, {  useContext, useState } from 'react';
-import bgImg from '../assets/footerbg.jpg'
+import bgImg from '../assets/registerbg.jpg'
 import { Link, useNavigate } from 'react-router';
 import img from '../assets/farmer.webp'
 import { AuthContext } from '../Context/AuthContext';
@@ -43,7 +43,7 @@ const Register = () => {
             updateUserProfile(displayName, photoURL)
             
             setUser(result.user)
-            fetch('http://localhost:5000/register-user', {
+            fetch('https://fasal-bridge-server.vercel.app/register-user', {
                method: 'POST',
                headers: {
                 'content-type': 'application/json'
@@ -52,7 +52,7 @@ const Register = () => {
             })
             .then(res=>res.json())
             .then(data=>{
-                console.log(data)
+                // console.log(data)
                 setUser(data)
             })
             e.target.reset();
@@ -85,7 +85,7 @@ const Register = () => {
             email: result.user.email
         
         }
-             fetch('http://localhost:5000/register-user', {
+             fetch('https://fasal-bridge-server.vercel.app/register-user', {
                method: 'POST',
                headers: {
                 'content-type': 'application/json'
@@ -94,7 +94,7 @@ const Register = () => {
             })
             .then(res=>res.json())
             .then(data=>{
-                console.log(data)
+                // console.log(data)
                 setUser(data)
             })
              toast.success('User Created Successfully!!');
@@ -109,6 +109,7 @@ const Register = () => {
     return (
        
          <div className='relative bg-cover bg-center py-16  flex justify-center items-center poppins-font px-4' style={{backgroundImage: `url(${bgImg})`}}>
+            <title>FasalBridge Agro Platform || Register</title>
             <div className='absolute inset-0 bg-gradient-to-br from-black/70 to-green-900/50 '></div>
             <div className='relative z-10 bg-white/95 p-6  flex flex-col md:flex-row lg:flex-row gap-4 rounded-xl shadow-2xl hover:shadow-lg transition-shadow duration-300 max-w-5xl w-full items-center'>
                 <div className='flex flex-col items-center justify-center text-center md:w-1/2 lg:w-1/2'>

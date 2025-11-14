@@ -21,7 +21,7 @@ const HeroBanner = () => {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
   useEffect(()=>{
-    fetch('http://localhost:5000/hero-slider')
+    fetch('https://fasal-bridge-server.vercel.app/hero-slider')
     .then(res=>res.json())
     .then(data=>{
       setSlides(data);
@@ -121,7 +121,7 @@ const HeroBanner = () => {
            exit={{opacity: 0, y: 20}}
            transition={{duration: 0.6, delay: 0.3}}
            
-           className='relative inline-flex items-center justify-center p-[5px] mt-2 lg:mt-4 overflow-hidden font-semibold text-white poppins-font cursor-pointer transition-all duration-300 bg-gradient-to-r from-green-500 via-lime-500  to-green-700 rounded-lg active:scale-90 hover:shadow-lg shadow-xl shadow-green-300/40'>
+           className='relative inline-flex items-center justify-center px-3 py-1  lg:p-[5px] mt-2 lg:mt-4 overflow-hidden font-semibold text-white poppins-font cursor-pointer transition-all duration-300 bg-gradient-to-r from-green-500 via-lime-500  to-green-700 rounded-lg active:scale-90 hover:shadow-lg shadow-xl shadow-green-300/40'>
                            
                             <span className='w-full h-full  transition-all duration-300 hover:bg-transparent px-4 py-1 lg:px-6 lg:py-2 rounded-md flex items-center gap-1'>Explore More
                                 
@@ -145,7 +145,7 @@ const HeroBanner = () => {
         slides.map((_, index)=>(
            <button key={index}
           onClick={()=> handleThumbnailClick(index)}
-          className={`w-3 h-3 rounded-full ${current === index ? 'bg-green-500' : 'bg-white/50'}`}
+          className={`w-2 h-2 lg:w-3 lg:h-3 rounded-full ${current === index ? 'bg-green-500' : 'bg-white/50'}`}
           >
 
           </button>
@@ -153,7 +153,7 @@ const HeroBanner = () => {
       }
 
       </div>
-      <div className='absolute bottom-3 md:bottom-12 lg:bottom-16 left-[99px] md:left-1/2 lg:left-1/2 transform -translate-x-1/2 flex space-x-2'>
+      <div className='absolute bottom-9 md:bottom-12 lg:bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2'>
       {
         slides.map((slide, index)=>(
           <img key={slide._id} src={slide.image} alt={slide.name} className={`w-8 h-8 md:w-10 md:h-10 lg:w-16 lg:h-16 object-cover rounded-lg cursor-pointer border-2

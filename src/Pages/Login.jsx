@@ -20,7 +20,7 @@ const Login = () => {
          toast.loading('Creating user...', {id: "create-user"});
         signInUser(email, password)
         .then(result=>{
-            console.log(result.user)
+            // console.log(result.user)
             setUser(result.user);
                e.target.reset();
             toast.success('User Logged in Successfully!!', {id: 'create-user'});
@@ -60,6 +60,7 @@ const Login = () => {
 
     return (
          <div className='relative bg-cover bg-center min-h-screen py-10 md:py-0 lg:py-0 flex justify-center items-center poppins-font px-4' style={{backgroundImage: `url(${bgImg})`}}>
+            <title>FasalBridge Agro Platform || Login</title>
             <div className='absolute inset-0 bg-gradient-to-br from-black/70 to-green-900/40 '></div>
             <div className='relative z-10 bg-white/95 p-8  flex flex-col md:flex-row lg:flex-row gap-4 rounded-xl shadow-2xl hover:shadow-lg transition-shadow duration-300 max-w-5xl w-full items-center'>
                 <div className='flex flex-col items-center justify-center text-center md:w-1/2 lg:w-1/2'>

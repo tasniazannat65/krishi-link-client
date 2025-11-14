@@ -16,7 +16,7 @@ const MyPosts = () => {
         if(!user.email){
            return; 
         }
-         fetch(`http://localhost:5000/my-posts?email=${user.email}`, {
+         fetch(`https://fasal-bridge-server.vercel.app/my-posts?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${user.accessToken}`
             }
@@ -33,18 +33,20 @@ const MyPosts = () => {
 
     const handleUpdate = (e)=>{
         e.preventDefault();
+        const image = e.target.image.value;
         const name = e.target.name.value;
         const pricePerUnit = e.target.pricePerUnit.value;
         const quantity = e.target.quantity.value;
         const location = e.target.location.value;
         const updatedCrop = {
+            image,
             name,
             pricePerUnit,
             quantity,
             location
 
         }
-        fetch(`http://localhost:5000/crops/${updateCrop._id}`, {
+        fetch(`https://fasal-bridge-server.vercel.app/crops/${updateCrop._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -54,7 +56,7 @@ const MyPosts = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            // console.log(data)
             if(data.modifiedCount){
                 toast.success('Crop updated successfully!')
                 setCrops(prev=> prev.map(crop=> crop._id === updateCrop._id ? {...crop, ...updatedCrop} : crop
@@ -82,7 +84,7 @@ const MyPosts = () => {
   confirmButtonText: "Yes, delete it!"
 }).then((result) => {
   if (result.isConfirmed) {
-    fetch(`http://localhost:5000/crops/${id}`, {
+    fetch(`https://fasal-bridge-server.vercel.app/crops/${id}`, {
         method: 'DELETE',
         headers: {
                 authorization: `Bearer ${user.accessToken}`
@@ -113,6 +115,7 @@ const MyPosts = () => {
     }
     return (
       <Container>
+        <title>FasalBridge Agro Platform || My Posts</title>
           <div className='text-center lg:pt-10 md:pt-8 pt-6'>
                      <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'>My Crop <span className='text-[#F9A825]'> Posts </span></h2>
             <p className=' font-medium text-lg  md:text-xl lg:text-xl text-gray-600 hind-siliguri-font mt-5'>Here you can manage all crops you have added.</p>
@@ -188,10 +191,15 @@ const MyPosts = () => {
 
        <dialog ref={cropModalRef} className="modal modal-bottom sm:modal-middle">
   <div className="modal-box">
-    <h3 className="font-bold text-lg">Edit Crop</h3>
+    <h3 className="font-bold text-green-800 text-lg">Edit Crop</h3>
    
     <div className="modal-action">
       <form onSubmit={handleUpdate} className='space-y-3'>
+        <label className='text-gray-900 font-semibold'>Crop Image URL</label>
+        <input type="url" name='image' defaultValue={updateCrop?.image || ''}
+        className='w-full border rounded-md p-2'
+        placeholder='https://example.com/image.jpg' required />
+
         <label className='text-gray-900 font-semibold'>Crop Name</label>
         <input type="text" name='name' defaultValue={updateCrop?.name || ''}
         className='w-full border rounded-md p-2'

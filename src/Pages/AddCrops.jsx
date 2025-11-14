@@ -28,7 +28,7 @@ const AddCrops = () => {
 
 
         }
-        fetch('http://localhost:5000/crops', {
+        fetch('https://fasal-bridge-server.vercel.app/crops', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -39,20 +39,21 @@ const AddCrops = () => {
         .then(res=>res.json())
         .then(data=>{
             toast.success('Crops added successfully!')
-            console.log(data)
+            // console.log(data)
             navigate('/my-posts')
         })
         .catch(error=>{
-            console.log(error)
+            // console.log(error)
             toast.error('Something went wrong')
         })
     }
     
     return (
        <div>
+        <title>FasalBridge Agro Platform || Add Crops</title>
        <Container>
           <div className='text-center pt-14'>
-                     <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'>🌾 Add New <span className='text-[#F9A825]'>Crop </span></h2>
+                     <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'> Add New <span className='text-[#F9A825]'>Crop </span></h2>
             <p className=' font-medium text-lg  md:text-xl lg:text-xl text-gray-600 hind-siliguri-font max-w-3xl mx-auto mt-5'>Fill out the form below to list your fresh produce on FasalBridge Your crop will appear in <strong>My Posts</strong> once added successfully.</p>
                 </div>
          <div className='bg-white shadow-2xl poppins-font rounded-2xl p-8 w-full mx-auto my-14 max-w-3xl border border-green-200'>

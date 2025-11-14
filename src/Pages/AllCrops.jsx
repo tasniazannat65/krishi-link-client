@@ -21,7 +21,7 @@ const AllCrops = () => {
         setLoading(true);
         setIsSearch(true);
 
-        fetch(`http://localhost:5000/search?search=${search_text}`)
+        fetch(`https://fasal-bridge-server.vercel.app/search?search=${search_text}`)
         .then(res=>res.json())
         .then(data=>{
             setCrops(data);
@@ -44,9 +44,10 @@ const AllCrops = () => {
     
     return (
         <div>
+          <title>FasalBridge Agro Platform || All Crops</title>
          <Container>
        <div className='flex items-center justify-center flex-col text-center py-10'>
-             <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'>🌿 Explore All <span className='text-[#F9A825]'>Available Crops</span></h2>
+             <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'> Explore All <span className='text-[#F9A825]'>Available Crops</span></h2>
             <p className=' font-medium text-lg  md:text-xl lg:text-xl text-gray-600 hind-siliguri-font max-w-3xl mx-auto mt-5 mb-7'>Find fresh, high-quality crops directly from trusted farmers across the country. Browse, compare prices, and connect instantly through FasalBridge.</p>
 
              
@@ -64,9 +65,9 @@ const AllCrops = () => {
       fill="currentColor"
     >
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       ></path>
     </svg>
   </div>

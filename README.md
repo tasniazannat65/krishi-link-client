@@ -1,4 +1,4 @@
-# FasalBridge
+# 🌾 FasalBridge
 
 #### FasalBridge is a modern web application that connects people in the agricultural sector farmers, traders and consumers in one digital space. Unlike traditional e-commerce platforms, FasalBridge operates as a social agro network where users can share crops, connect and collaborate directly.
 
@@ -82,19 +82,28 @@
 - Authentication: Firebase
 - Notifications: React Hot Toast, SweetAlert
 
-### 1. Clone the repository:
+### 1. Clone the server side  repository:
 
-        git clone 
+        git clone https://github.com/tasniazannat65/krishi-link-server.git
 
-### 2. Install dependencies: 
+### 2. Clone the client side repository:
+
+        git clone  https://github.com/tasniazannat65/krishi-link-client.git
+
+### 3. Website Live URL:
+        
+          https://fasal-bridge.web.app/
+                        
+
+### 4. Install dependencies: 
 
       npm install
 
-### 3. Start the backend server:
+### 5. Start the backend server:
 
      nodemon index.js
 
-### 4. Start the frontend:
+### 6. Start the frontend:
 
       npm run dev
 

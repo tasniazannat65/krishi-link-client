@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import CropDetails from "../Pages/CropDetails";
 import MyPosts from "../Pages/MyPosts";
 import Profile from "../Pages/Profile";
+import MyInterest from "../Pages/MyInterest";
 
 export const router = createBrowserRouter([
     {
@@ -22,13 +23,13 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
-                loader: ()=> fetch('http://localhost:5000/latest-crops'),
+                loader: ()=> fetch('https://fasal-bridge-server.vercel.app/latest-crops'),
                 hydrateFallbackElement: <LoadingSpinner/>
             },
             {
                 path: '/all-crops',
                 Component: AllCrops,
-                loader: ()=> fetch('http://localhost:5000/crops'),
+                loader: ()=> fetch('https://fasal-bridge-server.vercel.app/crops'),
                 hydrateFallbackElement: <LoadingSpinner/>
             },
             {
@@ -56,6 +57,12 @@ export const router = createBrowserRouter([
              path: '/profile',
              element: <PrivateRoute>
                 <Profile/>
+             </PrivateRoute>
+            },
+             {
+             path: '/my-interests',
+             element: <PrivateRoute>
+                <MyInterest/>
              </PrivateRoute>
             },
 

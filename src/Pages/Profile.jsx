@@ -15,7 +15,7 @@ const Profile = () => {
             
             return;
         }
-         fetch(`http://localhost:5000/users?email=${user.email}`, {
+         fetch(`https://fasal-bridge-server.vercel.app/users?email=${user.email}`, {
             headers: {
                 authorization: `Bearer ${user.accessToken}`
             }
@@ -39,7 +39,7 @@ const Profile = () => {
             photoURL,
             email
         }
-        fetch(`http://localhost:5000/users/${profile._id}`, {
+        fetch(`https://fasal-bridge-server.vercel.app/users/${profile._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -67,6 +67,7 @@ const Profile = () => {
     
     return (
         <Container>
+            <title>FasalBridge Agro Platform || Profile</title>
             <div className='lg:py-16  md:py-12 py-8'>
            
                 <div className='bg-white  shadow-md rounded-lg p-6 flex max-w-3xl mx-auto flex-col items-center'>

@@ -8,6 +8,7 @@ import { FaSeedling } from "react-icons/fa6";
 import MyLink from './MyLink';
 import { AuthContext } from '../../Context/AuthContext';
 import { IoLogOut } from 'react-icons/io5';
+import { MdOutlinePendingActions } from 'react-icons/md';
 
 
 const Navbar = () => {
@@ -83,6 +84,13 @@ const Navbar = () => {
                    My Profile
                 </MyLink>
               </li>
+             <li className='flex items-center gap-1'>
+            <MdOutlinePendingActions className='text-[#BA8E23]' />
+                <MyLink to="/my-interests">
+                
+                   My Interests
+                </MyLink>
+              </li>
            </ul>
 
           </div>
@@ -144,6 +152,13 @@ const Navbar = () => {
                    My Profile
                 </NavLink>
               </li>
+             <li className=' text-gray-700 font-semibold text-xl'>
+         
+                <NavLink to="/my-interests">
+                
+                   My Interests
+                </NavLink>
+              </li>
 
            </ul>
           </div>
@@ -176,7 +191,7 @@ const Navbar = () => {
   </div>
     )
   }
-   <div className='lg:block md:block hidden'>
+   <div className='lg:block md:block hidden ml-2'>
     <Link to='/register' className='btn   bg-gradient-to-r from-[#1B5E20] to-[#4CAF50] text-[16px] font-semibold rounded-md text-white'>
      <FaUserPlus/>
     Sign Up

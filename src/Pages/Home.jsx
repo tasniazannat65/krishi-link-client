@@ -6,11 +6,14 @@ import Container from '../Container/Container';
 import { FaArrowCircleRight } from 'react-icons/fa';
 import HowItWorks from '../Components/HowItWorks';
 import Blogs from '../Components/Blogs';
+import HappyFarmer from '../Components/HappyFarmer';
+import FarmerExpert from '../Components/FarmerExpert';
 
 const Home = () => {
     const crops = useLoaderData();
     return (
         <div>
+            <title>FasalBridge Agro Platform || Home</title>
             <section>
                 <HeroBanner/>
                 
@@ -18,7 +21,7 @@ const Home = () => {
            <Container>
              <section>
                 <div className='text-center pt-14'>
-                     <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'>🌻 Latest  <span className='text-[#F9A825]'>Crops </span></h2>
+                     <h2 className='font-bold text-2xl md:text-3xl  lg:text-4xl text-[#1B5E20]'> Latest  <span className='text-[#F9A825]'>Crops </span></h2>
             <p className=' font-medium text-lg  md:text-xl lg:text-xl text-gray-600 hind-siliguri-font max-w-3xl mx-auto mt-5'>Stay updated with the newest crops added to our collection. Check out what’s trending in the fields right now.</p>
                 </div>
   
@@ -49,6 +52,12 @@ const Home = () => {
             </section>
             <section>
                 <Blogs/>
+            </section>
+            <section>
+                <HappyFarmer/>
+            </section>
+            <section>
+                <FarmerExpert/>
             </section>
            </Container>
         </div>
